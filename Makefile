@@ -77,7 +77,7 @@ $(autofigdir):
 # upload to web
 
 rsync_upload: html pdf archive
-	rsync . -rvz --include='*/' --include='*.pdf' --include='*.svg' --include='*.html' --include='*.tar.gz' --exclude='*' --progress --links --delete -e "ssh -p 22" swt30@muon1.ast.cam.ac.uk:/home/swt30/public_html/files/papers/waterworlds/
+	rsync . -rvz --include='*/' --include='figdata/*.ipynb' --include='*.pdf' --include='*.svg' --include='*.html' --include='*.tar.gz' --exclude='*' --progress --links --delete -e "ssh -p 22" swt30@muon1.ast.cam.ac.uk:/home/swt30/public_html/files/papers/waterworlds/
 
 
 # cleaning
