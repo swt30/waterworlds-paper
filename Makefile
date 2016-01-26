@@ -25,7 +25,7 @@ selfcontainedcss=-H $(styledir)/css/style-open.html -H $(css) -H $(styledir)/css
 clutter=*.run.xml *.aux *.bcf *.fdb_latexmk *.fls *.log *.out *.bbl *.blg *Notes.bib .figsentinel
 
 # pandoc options
-commonopts=-S -s --filter=pandoc-crossref  --from=markdown+tex_math_single_backslash
+commonopts=--filter=pandoc-fignos --filter=pandoc-eqnos --filter=pandoc-tablenos --from=markdown -s -S
 texopts=$(commonopts) --template $(textemplate) --natbib --filter=pandoc-svg.py
 htmlopts=$(commonopts) --template $(htmltemplate) $(selfcontainedcss) --css $(css) --filter=pandoc-citeproc --mathjax
 
