@@ -12,11 +12,12 @@ plotrunner=makeplots.jl
 
 # Outputs
 outputexts=html tex pdf
-outputs=$(title).html $(title).pdf $(title).tex
+outputs=$(title).html $(title).pdf $(title).tex $(title)-rev.tex $(title)-rev.pdf
 
 # Styles and templates
 styledir=/home/scott/Documents/Styles
 textemplate=$(styledir)/pandoc/paper-mnras.tex
+revtextemplate=$(styledir)/pandoc/paper-mnras-revisions.tex
 htmltemplate=$(styledir)/pandoc/paper.html
 css=$(styledir)/css/markdown3.css
 selfcontainedcss=-H $(styledir)/css/style-open.html -H $(css) -H $(styledir)/css/style-close.html
@@ -26,7 +27,9 @@ clutter=*.run.xml *.aux *.bcf *.fdb_latexmk *.fls *.log *.out *.bbl *.blg *Notes
 
 # pandoc options
 commonopts=--filter=pandoc-fignos --filter=pandoc-eqnos --filter=pandoc-tablenos --from=markdown -s -S
-texopts=$(commonopts) --template $(textemplate) --natbib --filter=pandoc-svg.py
+basetexopts=$(commonopts) --natbib --filter=pandoc-svg.py
+texopts=$(basetexopts) --template $(textemplate)
+revtexopts=$(basetexopts) --template $(revtextemplate)
 htmlopts=$(commonopts) --template $(htmltemplate) $(selfcontainedcss) --css $(css) --filter=pandoc-citeproc --mathjax
 
 # make all the things!
@@ -39,21 +42,29 @@ bibtex:
 # documents
 
 pdf: $(title).pdf
+revision_pdf: $(title)-rev.pdf
 tex: $(title).tex
+revision_tex: $(title)-rev.tex
 html: $(title).html
 archive: $(title).tar.gz
 
-%.tar.gz: %.md pdf tex figures
+$(title).tar.gz: $(title).md pdf tex figures
 	tar -czf $(title).tar.gz $(title).md $(title).pdf $(title).tex library.bib autofigs/*.pdf
 
-%.pdf: %.tex figures
-	latexmk $< -pdf -e '$$pdflatex=q/xelatex %O %S/'
+$(title).pdf: $(title).tex figures
+	latexmk $(title).tex -pdf -e '$$pdflatex=q/xelatex %O %S/'
 
-%.tex: %.md $(textemplate) | figures bibtex
-	pandoc $< $(texopts) -o $@
+$(title)-rev.pdf: $(title)-rev.tex figures
+	latexmk $(title)-rev.tex -pdf -e '$$pdflatex=q/xelatex %O %S/'
 
-%.html: %.md $(css) $(htmltemplate) | figures
-	pandoc $< $(htmlopts) -o $@
+$(title)-rev.tex: $(title).md $(revtextemplate) | figures bibtex
+	pandoc $(title).md $(revtexopts) -o $(title)-rev.tex
+
+$(title).tex: $(title).md $(textemplate) | figures bibtex
+	pandoc $(title).md $(texopts) -o $(title).tex
+
+$(title).html: $(title).md $(css) $(htmltemplate) | figures
+	pandoc $(title).md $(htmlopts) -o $(title)-rev.tex
 
 
 # figures
