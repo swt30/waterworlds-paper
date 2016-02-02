@@ -48,8 +48,8 @@ revision_tex: $(title)-rev.tex
 html: $(title).html
 archive: $(title).tar.gz
 
-$(title).tar.gz: $(title).md pdf tex figures
-	tar -czf $(title).tar.gz $(title).md $(title).pdf $(title).tex library.bib autofigs/*.pdf
+$(title).tar.gz: $(title).md pdf revision_pdf tex figures
+	tar -czf $(title).tar.gz $(title).md $(title).pdf $(title)-rev.pdf $(title).tex library.bib $(title).bbl README.md autofigs/*.pdf
 
 $(title).pdf: $(title).tex figures
 	latexmk $(title).tex -pdf -e '$$pdflatex=q/xelatex %O %S/'
@@ -64,7 +64,7 @@ $(title).tex: $(title).md $(textemplate) | figures bibtex
 	pandoc $(title).md $(texopts) -o $(title).tex
 
 $(title).html: $(title).md $(css) $(htmltemplate) | figures
-	pandoc $(title).md $(htmlopts) -o $(title)-rev.tex
+	pandoc $(title).md $(htmlopts) -o $(title).html
 
 
 # figures
@@ -85,21 +85,10 @@ $(autofigdir):
 	mkdir -p $(autofigdir)
 
 
-# upload to web
-
-rsync_upload: html pdf archive
-	rsync . -rvz --include='*/' --include='figdata/*.ipynb' --include='*.pdf' --include='*.svg' --include='*.html' --include='*.tar.gz' --exclude='*' --progress --links --delete -e "ssh -p 22" swt30@muon1.ast.cam.ac.uk:/home/swt30/public_html/files/papers/waterworlds/
-
-
 # cleaning
 
 clean:
 	latexmk -C -f $(title).tex
 	rm -rf $(outputs) $(clutter) $(autofigdir)/*
-
-rsync_clean:
-	mkdir -p empty_local_folder
-	rsync -arv --delete empty_local_folder/ swt30@muon1.ast.cam.ac.uk:/home/swt30/public_html/files/papers/waterworlds/
-	rmdir empty_local_folder
 
 .PHONY: all clean rsync_upload rsync_clean figures forcefigures
