@@ -1,9 +1,9 @@
 ---
 # Document properties
-title: "In hot water: Effects of temperature-dependent interiors on the radii of water-rich super-Earths"
-short-title: Thermal effects in super-Earth interiors
+title: "In hot water: effects of temperature-dependent interiors on the radii of water-rich super-earths"
+short-title: Thermal effects in super-earth interiors
 author:
-    - name: Scott Thomas
+    - name: Scott W. Thomas
     - name: Nikku Madhusudhan
       affiliation: |
           Institute of Astronomy,
@@ -72,16 +72,17 @@ This lack of a rich source of observational data for planetary interiors means t
 Even inside our solar system, our knowledge of planetary interiors is limited by the indirect ways in which we can probe them.
 On Earth we have the advantage of seismic measurements, and in our solar system we have various gravitational moments to constrain interior structures.
 Outside the solar system we have only the masses and radii of planets to work with.
-Models from first principles---numerical or analytical models based on the physics of solid and liquid spheres---therefore dominate the field.
+Models from first principles (numerical or analytical models based on the physics of solid and liquid spheres) therefore dominate the field.
 
 Planetary interior models are a worthwhile starting point to make sense of the limited observational data we have.
 These models are inspired by earlier successes with stellar structure models, which are key to interpreting observations of stars.
 Others had previously considered the internal structures of planets in our solar system [for example, @Hubbard1980], but the study often taken as the base for exoplanetary modelling is by @Zapolsky1969 who constructed mass--radius relations for large homogeneous isothermal spheres.
-The ever-increasing number of known exoplanets---many of which have both mass and radius measurements---are a diverse and interesting set of objects to which to apply these models.  
+The ever-increasing number of known exoplanets, many of which have both mass and radius measurements, are a diverse and interesting set of objects to which to apply these models.  
 
 The first way in which planetary interior models can be useful is to make broad inferences about the structure of a planet.
 There is some information available about any planet despite an inherent degeneracy between different compositions.
-We can exclude certain classes of models---for example, small planets with large radii must almost certainly have large hydrogen envelopes---or we can take more sophisticated approaches.
+We can immediately exclude certain classes of models: for example, small planets with large radii must almost certainly have large hydrogen envelopes.
+We can also take more sophisticated approaches.
 @Sotin2007 modelled planets by fixing their compositions based on the properties of the host star.
 @Madhusudhan2012a argued for a carbon-rich interior in the exoplanet 55 Cnc e based on its carbon abundance and on its density matching that of pure carbon.
 @Dorn2015 also showed that mass and radius alone can constrain the size of a planet's core if we assume it is pure iron.
@@ -117,7 +118,7 @@ Though the factors above are all important, the effect of temperature on the mas
 This is for several reasons.
 First, its effects are thought to be relatively minor in the first place: @Howe2014 estimate that the effect of thermal corrections on an iron-silicate planet's radius is approximately 5 per cent.
 @Grasset2009 also describe how the radius of an Earth-like planet is not strongly affected by temperature changes.
-If the effect is small compared to current observational uncertainties, it is not necessarily relevant.
+If the effect is small compared with current observational uncertainties, it is not necessarily relevant.
 Secondly, modelling is easier if we assume zero-temperature or isothermal spheres of material, because we do not have to deal with energy transport within the planet.
 Finally, the data on thermal expansion of heavy elements are sparse at the high temperatures and pressures characteristic of planetary interiors [@Baraffe2008].
 Therefore mass--radius relations or models of individual planets traditionally had no temperature dependence at all [@Zapolsky1969; @Seager2007] but it is increasingly being included and thermal effects on radii are being explored [for example, see @Valencia2013].
@@ -137,7 +138,7 @@ It can also exist as a low-density supercritical fluid or superheated vapour.
 This all means that the behaviour of water layers is thermally interesting.
 The behaviour of water is also strongly linked to questions of habitability because Earth-sized solid planets with oceans provide the best approximation to the one planet known to harbour life.
 
-![Phase diagram of water. Water has a rich and interesting phase structure. Here we show some of the key phases which are relevant when modelling a watery planet: liquid, vapour, and solid ice Ih, but also more exotic phases like the high-pressure ices. Lines mark the boundaries of each phase as given by @Choukroun2007 and @Wagner2002.](autofigs/water_phases_fig.svg){#fig:water-phases}
+![Phase diagram of water. Water has a rich and interesting phase structure. Here we show some of the key phases which are relevant when modelling a watery planet: liquid, vapour, and solid ice Ih, but also more exotic phases such as the high-pressure ices. Lines mark the boundaries of each phase as given by @Choukroun2007 and @Wagner2002.](autofigs/water_phases_fig.svg){#fig:water-phases}
 
 Others have previously investigated the structures of planets containing a significant water component.
 For example, @Ehrenreich2006 studied the internal structure of the exoplanet OGLE 2005-BLG-390Lb, modelling the phase changes throughout.
@@ -167,7 +168,7 @@ We explain how we used these models to construct temperature-dependent mass--rad
 Next we present the equation of state for water that we used.
 It is comprehensive over the pressure and temperature range relevant to super-Earth interiors.
 We highlight the difficulty of dealing with disparate sources of experimental and theoretical data in different phases, as well as sources of uncertainty within the equation of state.
-Finally, we present comparisons to previous works to verify that our structural modelling code works appropriately.
+Finally, we present comparisons with previous works to verify that our structural modelling code works appropriately.
 
 
 ## Interior structure modelling
@@ -210,7 +211,7 @@ where $g = Gm/r^2$ is the gravity at the shell, $c_p$ is the isobaric heat capac
 This is sometimes written $α_V$ and is defined as the fractional increase in volume per unit temperature increase,
 $$ α = \left. {1 \over V}{∂V \over ∂T} \right|_p
      = - \left. {∂ \ln ρ \over ∂ \ln T} \right|_p. $$ {#eq:thermal-expansion}
-Our sources for these latter two coefficients are detailed in the equation of state section.
+Our sources for these latter two coefficients are detailed in our equation of state section.
 Equation @eq:temp-gradient-radial combined with equation @eq:mass-continuity gives the temperature gradient in terms of the mass co-ordinate,
 $$ {dT \over dm} = -{T α G m \over ρ c_p 4 π r^4}. $$ {#eq:temp-gradient}
 
@@ -263,7 +264,7 @@ Our equation of state for water therefore included its phase transitions, which 
 When calculating the adiabatic temperature profile, we enforced temperature and pressure continuity at these phase boundaries.
 We did this by ensuring that the equation for the adiabatic temperature gradient, equation @eq:temp-gradient, was finite and continuous.
 This effectively split the adiabatic temperature profile into several different sections, consisting of one separate adiabat for each phase and meeting at the phase boundaries of water.
-By handling each phase separately like this, we avoided the numerical difficulty of taking a derivative (equation @eq:thermal-expansion) across a density discontinuity.
+By handling each phase separately, we avoided the numerical difficulty of taking a derivative (equation @eq:thermal-expansion) across a density discontinuity.
 
 We note that it is possible to fix the radius and let another parameter vary instead.
 This could be the mass, surface temperature, surface pressure or the position of a layer boundary within the planet.
@@ -284,9 +285,9 @@ There was no single comprehensive equation of state data set available for water
 Previous studies have approached this problem by stitching together equations of state which are valid for different pressure regimes.
 For example, @Seager2007 took this approach with water, combining three temperature-independent equations of state for ice VII:
 
-- the Birch-Murnaghan equation of state at low pressures,
+- the Birch--Murnaghan equation of state at low pressures,
 - density functional theory calculations at intermediate pressures and
-- the Thomas-Fermi-Dirac model at very high pressures.
+- the Thomas--Fermi--Dirac model at very high pressures.
 
 The piecewise function defined in this way is appropriate across a wide pressure range.
 
@@ -332,7 +333,7 @@ Work(s)                    Water equation of state used
 
 @Madhusudhan2012           BME
 
-@More1988                  Quotidian EOS (ion EOS with Thomas-Fermi model)
+@More1988                  Quotidian EOS (ion EOS with Thomas--Fermi model)
 
 @Nettelmann2008            LM-REOS
 
@@ -385,7 +386,7 @@ Secondly, we aimed for a full treatment of density changes over phase boundaries
 Accordingly, we used the phase boundaries specified by @Dunaeva2010 to divide the temperature--pressure phase space into regions corresponding to different phases of water.
 We then chose an appropriate equation of state to represent each phase.
 
-![Comparison of our equation of state to the high-pressure limit. The TFD (Thomas-Fermi-Dirac) equation of state is increasingly accurate in the high pressure limit, where temperature effects on the water density disappear. We also show temperature contours of our water equation of state. The TFD, which has no temperature correction, is a poor approximation of the behaviour of water at low pressures, especially across the liquid--vapour phase boundary (vertical lines). But all other choices of equation of state approach the TFD at high pressures, and so it is appropriate in the TPa region and beyond.](autofigs/eos_contours_fig.svg){#fig:eos-contours}
+![Comparison of our equation of state with the high-pressure limit. The TFD (Thomas--Fermi--Dirac) equation of state is increasingly accurate in the high-pressure limit, where temperature effects on the water density disappear. We also show temperature contours of our water equation of state. The TFD, which has no temperature correction, is a poor approximation of the behaviour of water at low pressures, especially across the liquid--vapour phase boundary (vertical lines). But all other choices of equation of state approach the TFD at high pressures, and so it is appropriate in the TPa region and beyond.](autofigs/eos_contours_fig.svg){#fig:eos-contours}
 
 Our equation of state is for pure water only.
 Others have investigated how impurities may affect the equation of state and the planet's properties.
@@ -455,21 +456,21 @@ However, we preferred the more recent tabulated measurements of @Sugimura2010 wh
 
 #### Supercritical fluid and plasma: {-}
 @French2009 presented quantum molecular dynamics simulations of high-temperature and high-pressure plasma, ice, and superionic fluid phases of water.
-We used tabulated values from that paper in the region beyond 1000$\,$K and $1.86×10^9\,$Pa.
-@Lopez2012 noted that this region has recently been probed by laboratory experiments thanks to @Knudson2012, who strongly advocate "that [the French equation of state] be the standard in modeling water in Neptune, Uranus, and 'hot Neptune' exoplanets."---that is, temperatures and pressures also relevant to the interiors of super-Earths.
-We did not use the low-density tables presented separately in that work, as these are significantly different from the IAPWS results in the same temperature and pressure range.
+We used their tables in the region beyond 1000$\,$K and $1.86×10^9\,$Pa.
+@Lopez2012 noted that this region has recently been probed by laboratory experiments thanks to @Knudson2012, who strongly advocate "that [the French equation of state] be the standard in modeling water in Neptune, Uranus, and 'hot Neptune' exoplanets.". These temperatures and pressures are also relevant to the interiors of super-Earths.
+We did not use the low-density tables that they presented separately because these differ significantly from the IAPWS results in the same temperature and pressure range.
 
 #### Low-temperature ices: {-}
-For completeness, our equation of state includes low pressure ice Ih from @Feistel2006 as well as higher pressure ices such as ice III, V, and VI.
-We took the phase boundaries from @Dunaeva2010 and used the temperature-dependent formulations for these ices that are detailed in @Choukroun2007.
+For completeness, our equation of state includes low-pressure ice Ih from @Feistel2006 as well as higher-pressure ices such as ice III, V and VI.
+We took the phase boundaries from @Dunaeva2010 and used the temperature-dependent formulations for these ices by @Choukroun2007.
 
 #### Ice X and beyond: {-}
-We adopted the piecewise equation of state described in @Seager2007 to describe the transition from ice VII to ice X and beyond.
+We adopted the piecewise equation of state of @Seager2007 to describe the transition from ice VII to ice X and beyond.
 This does not include any temperature dependence: any interesting phase behaviour of ice at these high pressures is increasingly theoretical and unconfirmed by experiment.
-Temperature effects approach zero at these high pressures anyway (Fig. @fig:eos-contours), so we used the Thomas-Fermi-Dirac equation of state for all regions beyond 7686GPa which were not covered by one of the other regions listed above.
+Temperature effects approach zero at these high pressures anyway (Fig. @fig:eos-contours), so we used the Thomas--Fermi--Dirac equation of state for all regions beyond 7686GPa which were not covered by one of the other regions listed above.
 
 #### Other regions: {-}
-Finally, we filled in values for all other regions according to the IAPWS formulation or extrapolations thereof.
+Finally, we filled in all other regions according to the IAPWS formulation or extrapolations thereof.
 In practice, the only regions not covered above were low-pressure and high-temperature vapour regions, which we do not expect to be relevant for our super-Earth interior models.
 
 --------------------------------------------------------------------------------
@@ -477,7 +478,7 @@ Equation of state   Source
 ------------------- ------------------------------------------------------------
 ANEOS               @Thompson1972
 
-BME                 Birch-Murnaghan equation of state; see @Poirier2000
+BME                 Birch--Murnaghan equation of state; see @Poirier2000
 
 DFT                 Density functional theory; refers to theoretical
                     calculations which multiple authors have performed
@@ -494,7 +495,7 @@ MGD                 Mie-Grüneisen-Debye thermal pressure expansion;
 
 SESAME              @Lyon1992
 
-TFD                 Thomas-Fermi-Dirac; described in @Salpeter1967
+TFD                 Thomas--Fermi--Dirac; described in @Salpeter1967
 
 Vinet               @Vinet1987
 --------------------------------------------------------------------------------
@@ -506,22 +507,22 @@ We made no attempt to smooth or otherwise interpolate between the different sour
 This approach means that sharp density changes across phase boundaries are well-represented in the final equation of state.
 This is desirable so that we may examine the differentiation that results solely from phase transitions.
 It also results in some artificial density discontinuities at the boundaries between different data sets.
-We believe that this has not affected the results: these discontinuities are minor compared to the density variations within each phase of water, and in most cases we also bounded the domain of each data set to that of a particular phase.
+We believe that this has not affected the results: these discontinuities are minor compared with the density variations within each phase of water and, in most cases, we also bounded the domain of each data set to that of a particular phase.
 
 Because we used disparate sources of data, we evaluated the density at a given temperature and pressure in different ways depending on the data source.
 Although we did not smooth or interpolate *between* data sets, we needed to interpolate some data sources *within* the data set.
-Where data were published in tabulated form on a structured grid, we used simple two-dimensional linear interpolation[^2d-interp] to evaluate points not lying on the grid.
+Where data were published in tabulated form on a structured grid, we used simple two-dimensional linear interpolation[^2d-interp] to evaluate the equation of state at points not lying on the grid.
 Where data were published as unstructured points, we used barycentric interpolation on the mesh of Delaunay triangles[^delaunay] defined by these points.
 We also used this Delaunay mesh to determine if a given $(P,T)$ pair lay within the domain of a particular equation of state, allowing us to fall back to another equation of state if necessary.
-We evaluated functional forms of the equation of state as-is, defining their domain by means of a bounding box or a polygon in $(P,T)$ space taken from the phase boundaries of @Dunaeva2010.
+We evaluated functional forms of the equation of state as is, defining their domain by means of a bounding box or a polygon in $(P,T)$ space taken from the phase boundaries of @Dunaeva2010.
 
 [^2d-interp]: For multidimensional linear interpolation we used [Dierckx.jl](https://github.com/kbarbary/Dierckx.jl).
 [^delaunay]: To construct a Delaunay tessellation we used [VoronoiDelaunay.jl](https://github.com/JuliaGeometry/VoronoiDelaunay.jl).
 
 Some of the equations of state used in this final synthesized version were much simpler than others.
-This meant that the evaluation time varied from point to point---from very quick table lookups and interpolation to the slower IAPWS formulae.
+This meant that the evaluation time varied from point to point, from very quick table lookups and interpolation to the slower IAPWS formulae.
 In addition, any equation of state that was specified in the inverse form $P = P(ρ, T)$ needed to be numerically inverted to give the canonical form $ρ = ρ(P, T)$ used in our models.
-To avoid duplicating this calculation unnecessarily, we re-sampled the final equation of state onto a 256 by 256 pressure--temperature grid.
+To avoid duplicating this calculation unnecessarily, we re-sampled the final equation of state on to a 256 by 256 pressure--temperature grid.
 Pre-computing and tabulating the data in this way saved significant time.
 In our trials, the resolution of the grid barely altered the properties of the planetary models.
 This suggests that the density behaviour within a single phase region was more important than any effects across phase boundaries that might be lost by sampling from this discrete grid.
@@ -529,11 +530,11 @@ This suggests that the density behaviour within a single phase region was more i
 > The equation of state we used necessarily has some uncertainty in it, especially in regions near the critical point of water [@Wagner2002] and at high temperatures and pressures where there are sometimes conflicting experimental and theoretical data [@Baraffe2008].
 The error in the equation of state varies depending on the original data source.
 For the region encompassed by the IAPWS data [@Wagner2002], the density uncertainty is approximately 0.01 per cent (liquid and solid), 0.03 to 0.1 per cent (vapour), and up to 0.5 per cent in the region around and beyond the critical point.
-A more detailed breakdown of these errors is given in §6.3.2, in particular fig. 6.1, in that paper.
+They give a more detailed breakdown of these errors in section 6.3.2, in particular fig. 6.1.
 We estimate that the error beyond these regions is closer to 1 per cent if we extrapolate beyond the table and assume that the uncertainty continues to increase at higher temperatures and pressures.
 For the supercritical fluid, plasma and superionic phases in the data of @French2009, they state that "the QMD EOS is accurate up to 1 per cent for the conditions relevant for the giant planet’s interiors of our solar system."
 For the ice VII phase, the measurements of @Sugimura2010 have errors of between 0.003 per cent and 0.5 per cent.
-Finally, it is not possible to give a meaningful uncertainty estimate at higher pressures where no measurements exist, but we do not treat the temperature dependence here anyway.
+Finally, it is not possible to give a meaningful uncertainty estimate at higher pressures where no measurements exist, but we do not treat the temperature dependence there anyway.
 
 ### Thermal expansion and heat capacity
 
@@ -544,11 +545,10 @@ We used the IAPWS tables for heat capacity in the liquid--vapour range, then too
 This is because we could not find readily available heat capacity data across the full range of phases in our equation of state.
 This approach therefore does not reflect any changes in heat capacity between the high-pressure ice phases.
 The most significant effect is the change in heat capacity across the liquid--vapour phase boundary, which we do capture in our models.
-<!-- compare to literature values for heat cap in ice VII? -->
 
 We drew the thermal expansion coefficient $α$ directly from the equation of state by evaluating equation @eq:thermal-expansion.
 We used automatic differentiation[^autodiff] where possible to evaluate the derivative.
-In some cases this was not possible;[^not-always-possible] we used finite differencing[^finite-diff] in these cases.
+In some cases this was not possible[^not-always-possible] so we used finite differencing[^finite-diff].
 As well as pre-computing the equation of state itself, we pre-computed and tabulated the thermal expansion coefficient on the same pressure--temperature grid.
 Some previous works have assumed a fixed thermal expansion coefficient: for example, @Ehrenreich2006 took a fixed value for $α$ in their models.
 We believe that our approach is more appropriate for understanding how the temperature gradient and physical properties of a watery planet are affected by the thermal properties of water.
@@ -560,75 +560,75 @@ We believe that our approach is more appropriate for understanding how the tempe
 
 ## Model verification
 
-We verified our models by making mass--radius diagrams as described in the previous section and comparing them to previous works.
+We verified our models by making mass--radius diagrams as described in the previous section and comparing them with previous work.
 
 ### The isothermal case
 
 We checked that our models work in the isothermal case by replicating the mass--radius relations of @Seager2007.
-We exactly reproduced the mass--radius relations when we constructed homogeneous isothermal 300$\,$K planets using the equations of state specified in that paper, as shown in Fig. @fig:seager-mr-comparison.
-We set the surface pressure of our models to zero, following the boundary condition used in that study.
-The surface pressure hardly affects the results, as the equations of state are for the solid phase only.
+We exactly reproduced the mass--radius relations when we constructed homogeneous isothermal 300$\,$K planets using the equations of state specified in their paper, as shown in Fig. @fig:seager-mr-comparison.
+We set the surface pressure of our models to zero, following the boundary condition they used.
+The surface pressure hardly affects the results because the equations of state are for the solid phase only.
 This identical mass--radius relation verified that our integrator works correctly, and we therefore began to investigate where the differences lie upon including temperature effects.
 
-![Validation of isothermal models. Our structural models exactly reproduce previous results in the isothermal case. Here we show mass--radius relations for homogeneous isothermal spheres. If we adopt identical equations of state to the ones used in @Seager2007, we obtain the same result as that study. This serves as a verification that we are correctly solving the structural equations. These models used zero surface pressure and have no temperature dependence---the equations of state are isothermal and are taken at 300$\,$K.](autofigs/seager_comparisons_fig.svg){#fig:seager-mr-comparison}
+![Validation of isothermal models. Our structural models exactly reproduce previous results in the isothermal case. Here we show mass--radius relations for homogeneous isothermal spheres. If we adopt identical equations of state to those used by @Seager2007, we obtain the same result. This serves as a verification that we are correctly solving the structural equations. These models used zero surface pressure and have no temperature dependence: the equations of state are isothermal and are taken at 300$\,$K.](autofigs/seager_comparisons_fig.svg){#fig:seager-mr-comparison}
 
 ### The adiabatic case
 
-We verified our adiabatic multi-layer models by comparing them to those of @Valencia2007a, who constructed similar models using the ice VII equation of state for water (Fig. @fig:valencia-mr-comparison).
-When we set high surface pressures, $10^{10}\,$Pa---that is, we forced the surface layer of water to begin as ice VII or close to it---we produced a very similar mass--radius relation.
-But we predict inflated radii at lower surface pressures, and therefore conclude that surface temperature and surface pressure are both important factors for determining the radius of a planet with a water layer.
-We further explore this relationship in the results section.
+We verified our adiabatic multi-layer models by comparing them with those of @Valencia2007a, who constructed similar models using the ice VII equation of state for water (Fig. @fig:valencia-mr-comparison).
+When we set high surface pressures ($10^{10}\,$Pa) we forced the surface layer of water to begin as ice VII or close to it and therefore produced a very similar mass--radius relation.
+However, we predict inflated radii at lower surface pressures and therefore conclude that surface temperature and surface pressure are both important factors for determining the radius of a planet with a water layer.
+We further explore this relationship in our results section.
 
-![Validation of adiabatic models. Our mass--radius relations reproduce those for dry planets well, and predict inflated radii for planets with water layers. Here we show mass--radius relations for two classes of models: dry planets (33 per cent Fe and 67 per cent MgSiO$_3$ by mass), and wet planets (17 per cent Fe, 33 per cent MgSiO$_3$, and 50 per cent H$_2$O). We compared the mass--radius relations to the work of @Valencia2007a, who constructed models with ice VII layers. At a surface pressure of $10^{10}\,$Pa, the water layer in the wet planets will be mostly ice VII, and so our results are similar in this case. Small differences are likely due to our different equation of state choice for ice VII. However, at lower surface pressures, water can have an extended lower density shell, resulting in a larger planet than otherwise expected. The surface temperature in these models is 550$\,$K, matching the characteristic temperature used by @Valencia2007a in their models.](autofigs/valencia_comparisons_fig.svg){#fig:valencia-mr-comparison}
+![Validation of adiabatic models. Our mass--radius relations reproduce those for dry planets well, and predict inflated radii for planets with water layers. Here we show mass--radius relations for two classes of models: dry planets (33 per cent Fe and 67 per cent MgSiO$_3$ by mass), and wet planets (17 per cent Fe, 33 per cent MgSiO$_3$, and 50 per cent water). We compared the mass--radius relations with the work of @Valencia2007a who constructed models with ice VII layers. At a surface pressure of $10^{10}\,$Pa the water layer in the wet planets is mostly ice VII and so our results are similar in this case. Small differences are likely due to our different equation of state choice for ice VII. However, at lower surface pressures, water can have an extended lower density shell that results in a larger planet than otherwise expected. The surface temperature in these models is 550$\,$K, matching the characteristic temperature used by @Valencia2007a in their models.](autofigs/valencia_comparisons_fig.svg){#fig:valencia-mr-comparison}
 
 There are minor differences between our mass--radius relations and the mass--radius relations presented by @Valencia2007a.
 We slightly underpredict the radii of lower-mass planets in models with surface pressures of $10^{10}\.$Pa.
-These differences are likely due to our choice of equation of state: we use only simple isothermal prescriptions for iron and magnesium silicate, and include more phases of water than just ice VII.
+These differences are likely due to our choice of equation of state: we use only simple isothermal prescriptions for iron and magnesium silicate and include more phases of water than just ice VII.
 We also did not include any treatment of conductive boundary layers in our models.
 In general, however, our results agree well with theirs.
 
-We also compared our results to evolutionary models [@Lopez2012].
+We also compared our results with the evolutionary models of @Lopez2012.
 Although we were able to reproduce their mass--radius relation for Earth-like planets, we were less successful when adding extended water layers (Fig. @fig:lopez-mr-comparison).
-We can match the radius of an arbitrary planet by choosing an appropriate surface pressure, but we underpredict the radii of small planets and overpredict the radii of large planets compared to their results.
-This may be a result of different equation of state choices, but we believe it is more likely that they produce a non-adiabatic temperature gradient during the course of their evolutionary calculations.
+We can match the radius of an arbitrary planet by choosing an appropriate surface pressure but we underpredict the radii of small planets and overpredict the radii of large planets compared with their results.
+This may be a result of different equation of state choices but we believe it is more likely that they produce a non-adiabatic temperature gradient during the course of their evolutionary calculations.
 
-![Comparison to evolutionary models. We plot dry (Earth-like) and wet (50 per cent water on an Earth-ratio core/mantle) mass--radius relations. Shown for comparison are models by @Lopez2012, who build on work by @Fortney2007 and @Nettelmann2011 by using a thermal evolution approach to track the entropy within each planet as it cools. Surface temperature significantly alters the mass--radius relation in our models. The surface temperature in these models is 700$\,$K, but the shaded band shows models with surface temperatures from 500 to 900$\,$K---a significant spread, which is caused by temperature-dependent density changes of water at lower pressures. We chose a surface pressure of $10^7$Pa to approximately match the radii of @Lopez2012. Their method does not begin from an explicit surface pressure, as ours does.](autofigs/lopez_comparisons_fig.svg){#fig:lopez-mr-comparison}
+![Comparison with evolutionary models. We plot dry (Earth-like) and wet (50 per cent water on an Earth-ratio core/mantle) mass--radius relations. Shown for comparison are models by @Lopez2012, who build on work by @Fortney2007 and @Nettelmann2011 by using a thermal evolution approach to track the entropy within each planet as it cools. Surface temperature significantly alters the mass--radius relation in our models. The surface temperature in these models is 700$\,$K but the shaded band shows models with surface temperatures from 500 to 900$\,$K, a significant spread, which is caused by temperature-dependent density changes of water at lower pressures. We chose a surface pressure of $10^7\,$Pa to approximately match the radii of @Lopez2012. Their method does not begin from an explicit surface pressure, as ours does.](autofigs/lopez_comparisons_fig.svg){#fig:lopez-mr-comparison}
 
 Fig. @fig:lopez-mr-comparison also provides a first indication of how changes in surface temperature can affect the mass--radius relation.
-We highlight the magnitude of these differences and note that they are still significant at pressures of $10^7\,$Pa (100$\,$bar) and up---well into the pressure region where many atmospheric models terminate.
-We explore the effects on our models of changing surface temperature, surface pressure and composition in the results section.
+We highlight the magnitude of these differences and note that they are still significant at pressures of $10^7\,$Pa (100$\,$bar) and up, well into the pressure region where many atmospheric models terminate.
+We explore the effects on our models of changing surface temperature, surface pressure and composition in the next section.
 
 
 # Results
 
-We have explored the effects of temperature dependence on the radii of H$_2$O-rich super-Earths.
+We have explored the effects of temperature dependence on the radii of water-rich super-Earths.
 This section shows that significant radius variations can occur across temperature ranges relevant to super-Earths.
-We explored the dependence of super-Earth radii on three key model parameters:
+We explored the dependence of super-Earth radii on three key model parameters.
 
-1. Planet surface temperature, with the H$_2$O layer temperature profile taken as
+1. Planet surface temperature, with the water layer temperature profile taken as
     a) isothermal, or
     b) adiabatic.
 2. Planet surface pressure.
-3. Planet composition, i.e. H$_2$O mass fraction.
+3. Planet composition, i.e. water mass fraction.
 
 
 ## Effect of surface temperature on isothermal and adiabatic interiors
 
 We found that thermal expansion can lead to significant changes in the radii of water-rich super-Earths.
-We constructed spheres of water in two different ways: first modelling them as homogeneous isothermal spheres, then instead allowing the temperature to increase adiabatically into the planet.
+We constructed spheres of water in two different ways: first we modelled them as homogeneous isothermal spheres, then we instead allowed the temperature to increase adiabatically into the planet.
 Fig. @fig:isothermal-vs-adiabatic shows that the assumption that thermal expansion effects are negligible, which was made in some previous studies, is not the case.
 This is true in two senses.
-First, a significant temperature dependence exists when adopting an adiabatic interior temperature profile compared to an isothermal one.
-But the surface temperature also affects the radius of a planet within both types of models.
+First, a significant temperature dependence exists when we adopt an adiabatic interior temperature profile compared with an isothermal one.
+The surface temperature also affects the radius of a planet within both types of models.
 
-![Dependence of radii on surface temperature and internal temperature profile. An increased surface temperature results in an increased planetary radius, and this effect is especially pronounced in the full adiabatic temperature treatment. Here we show homogeneous spheres of water constructed in two different ways: an isothermal treatment where the temperature is constant throughout the planet, and an adiabatic treatment where we fixed the surface temperature and allowed it to increase inwards according to the adiabatic relation (equation @eq:temp-gradient). The adiabatic models are warmer and therefore significantly larger overall, but even the isothermal planets display some radius change due to temperature. Comparing to some of the best-characterised exoplanets[^exoplanets.org] shows that the effects of this temperature dependence are comparable to current uncertainties on mass and radius. The surface pressure in these models is $10^7\,$Pa (100$\,$bar), and the temperature increases in steps of 100$\,$K.](autofigs/isothermsadiabats_fig.svg){#fig:isothermal-vs-adiabatic}
+![Dependence of radii on surface temperature and internal temperature profile. An increased surface temperature results in an increased planetary radius. This effect is especially pronounced in the full adiabatic temperature treatment. Here we show homogeneous spheres of water constructed in two different ways: an isothermal treatment where the temperature is constant throughout the planet and an adiabatic treatment where we fixed the surface temperature but allowed the temperature to increase inwards according to the adiabatic relation (equation @eq:temp-gradient). The adiabatic models are warmer and therefore significantly larger overall, but even the isothermal planets display some radius change due to temperature. The effects of this temperature dependence are comparable to current uncertainties on measured masses and radii for some of the best-characterised exoplanets[^exoplanetsorg]. The surface pressure in these models is $10^7\,$Pa (100$\,$bar), and the temperature increases in steps of 100$\,$K. The large gap between 500 and 600$\,$K in the adiabatic case is due to a density discontinuity between the liquid and vapour phases.](autofigs/isothermsadiabats_fig.svg){#fig:isothermal-vs-adiabatic}
 
-[^exoplanets.org]: These data are from [exoplanets.org](http://www.exoplanets.org). We selected planets with known radii and masses of 1 to 10$\,$M$_⊕$. We then plotted the twelve planets with the lowest summed relative uncertainty in mass and radius $\left( ΔR/R + ΔM/M \right)$.
+[^exoplanetsorg]: These data are from [exoplanets.org](http://www.exoplanets.org). We selected planets with known radii and masses of 1 to 10$\,$M$_⊕$. We then plotted the twelve planets with the lowest summed relative uncertainty in mass and radius $\left( ΔR/R + ΔM/M \right)$.
 
-The adiabatic models have a larger radius for a given mass when compared to the isothermal case.
+The adiabatic models have a larger radius for a given mass when compared with the isothermal case.
 This is to be expected: the average temperature is higher along an adiabat than an isotherm fixed at the surface temperature, and the density of water generally decreases with temperature.
 The increase in radius is significant at higher surface temperatures, as shown in Fig. @fig:isothermal-vs-adiabatic. For example, a 4$\,$M$_⊕$ water planet with a 600$\,$K surface has a radius of 2.1$\,$R$_⊕$ if its interior is isothermal, but 2.4$\,$R$_⊕$ if it is adiabatic.
-Across the super-Earth mass range we considered, the adiabatic radii increased by up to 0.4$\,$R$_⊕$ when compared to the isothermal case.
+Across the super-Earth mass range we considered, the adiabatic radii increased by up to 0.4$\,$R$_⊕$ when compared with the isothermal case.
 The difference becomes particularly pronounced at higher surface temperatures, at which point the water layer may consist of supercritical fluid rather than liquid, solid, or vapour (Fig. @fig:water-phases).
 
 A significant dependence on surface temperature also exists when using the adiabatic models.
@@ -640,14 +640,15 @@ We have highlighted above the change in the adiabatic models, which we claim are
 But even the isothermal models show a significant increase in radius with the planet's temperature.
 For a 10$\,$M$_⊕$ planet, the change in radius is 0.2$\,$R$_⊕$ from 300 to 1000$\,$K.
 This is due to the thermal expansion of the planet as a whole, rather than of one small part of the water layer near the surface.
-We do not necessarily expect an adiabatic temperature gradient throughout the whole planet because the entire interior may not all be convective---for example, @Valencia2007a included conductive boundary layers in their models.
+We do not necessarily expect an adiabatic temperature gradient throughout the whole planet because the entire interior may not all be convective.
+For example, @Valencia2007a included conductive boundary layers in their models.
 In that case, the true temperature-dependent behaviour of the mass--radius diagram might lie between the adiabatic and isothermal cases.
 Despite this, Fig. @fig:isothermal-vs-adiabatic shows that the surface temperature can still play an important role in determining the radius of a planet if it has a substantial water layer.
 This is true even in the extreme isothermal case where there is no temperature gradient at all within the planet.
 
-These models have a surface pressure of $10^7\,$Pa (100$\,$bar), so this effect is not due to the strong liquid--vapour transition at 1$\,$bar.
+These models have a surface pressure of $10^7\,$Pa (100$\,$bar) so this effect is not due to the strong liquid--vapour transition at 1$\,$bar.
 In fact, we still see these effects past the critical pressure of water ($2.206×10^7\,$Pa).
-The critical point, which is visible in Figs. @fig:water-phases and @fig:eos-phase-space, is the point in temperature--pressure space beyond which there is no distinct phase transition from liquid to vapour.
+The critical point, which is visible in Figs @fig:water-phases and @fig:eos-phase-space, is the point in temperature--pressure space beyond which there is no distinct phase transition from liquid to vapour.
 This indicates that a liquid--vapour transition is not required to produce a significantly inflated radius when the water layer is heated.
 We discuss the effect of pressure on these models further in the next section.
 
@@ -656,25 +657,26 @@ We discuss the effect of pressure on these models further in the next section.
 
 The surface pressure can strongly affect the temperature-dependent thickness of the water layer (Fig. @fig:surface-pressure-variation).
 For example, at high temperatures (1000$\,$K), increasing the surface pressure of a 10 per cent water and 4$\,$M$_⊕$ planet from 10$\,$bar to 1000$\,$bar compresses the water layer significantly, decreasing the planet's radius by a factor of two.
-And at low pressures we see a bifurcation in the surface pressure contours where a surface pressure increase of 100$\,$K or less can inflate the radius of a watery super-Earth by more than 50 per cent.
+And at low pressures we see a bifurcation in the surface pressure contours where a surface temperature increase of 100$\,$K or less can inflate the radius of a watery super-Earth by more than 50 per cent.
 This is the result of a transition across the liquid--vapour phase boundary, which exists at pressures up to the critical pressure of water ($2.206×10^7\,$Pa).
 Our interior structure code is most likely not the best choice for modelling such a quasi-atmospheric layer: we did not handle radiative energy transfer in our models.
-We have therefore not undertaken a detailed study of the behaviour of these vapour layers, as they likely require a more sophisticated treatment of the temperature profile than our adiabatic assumption.
+We have therefore not undertaken a detailed study of the behaviour of these vapour layers.
+They likely require a more sophisticated treatment of the temperature profile than our adiabatic assumption.
 
-![Dependence of radii on surface pressure. The effect of temperature on the radius of watery planets decreases with increasing surface pressure, but remains significant ($≳ 0.1\,$R$_⊕$) for pressures below 1000$\,$bar. Here we show mass--radius relations for spheres with an Earth-like core under a 30 per cent water layer, changing only the surface pressure each time. The temperature dependence remains even beyond the critical pressure of water ($2.206×10^7\,$Pa), at which point the surface water exists as a supercritical fluid. Only at very high pressures ($10^9$ or $10^{10}\,$Pa; $10\,000$ or $100\,000$ bar) does this temperature dependence vanish.](autofigs/pressures_big_fig.svg){#fig:surface-pressure-variation}
+![Dependence of radii on surface pressure. The effect of temperature on the radius of watery planets decreases with increasing surface pressure, but remains significant (greater than about $0.1\,$R$_⊕$) for pressures below 1000$\,$bar. Here we show mass--radius relations for spheres with an Earth-like core under a 30 per cent water layer, changing only the surface pressure each time. The temperature dependence remains even beyond the critical pressure of water ($2.206×10^7\,$Pa), at which point the surface water exists as a supercritical fluid. Only at very high pressures ($10^9$ or $10^{10}\,$Pa; $10\,000$ or $100\,000$ bar) does this temperature dependence vanish.](autofigs/pressures_big_fig.svg){#fig:surface-pressure-variation}
 
 Despite observing highly inflated radii when the temperature is increased across the liquid--vapour phase boundary, we still see temperature-dependent variation in the planet's radius past the critical pressure of water.
 This is because the density of water is still strongly temperature-dependent in the super-critical regime.
 In fact, we might reasonably expect the same inflated radii in any situation where the pressure of the water layer places it in a region of the water phase diagram that has significant temperature dependence.
-If the water layer is heated to thousands of Kelvin, this temperature dependence may only begin to disappear around $10^{10}\,$Pa ($100\,000\,$bar) (Fig. @fig:eos-contours).
+If the water layer is heated to thousands of Kelvin, this temperature dependence may only begin to disappear around $10^{10}\,$Pa ($100\,000\,$bar, Fig. @fig:eos-contours).
 At a pressure of $10^8\,$Pa (1000$\,$bar), a watery super-Earth with a surface temperature of 1000$\,$K still has a radius that is up to 0.1$\,$R$_⊕$ larger than one with a surface temperature of 300$\,$K.
-This is comparable to or greater than the best current uncertainties on measured super-Earth radii (Fig. @fig:isothermal-vs-adiabatic), and indicates that the surface temperature is a key parameter to consider when attempting to model planets with significant water mass.
+This is comparable to or greater than the best current uncertainties on measured super-Earth radii (Fig. @fig:isothermal-vs-adiabatic), and indicates that the surface temperature is a key parameter to consider when one attempts to model planets with significant water mass.
 
 We included no atmospheric layers in these models.
 Other studies have provided more complete treatments of atmospheric layers.
-For example, @Rogers2010a included a gas layer on top of an isothermal interior structure model in order to interpret the structure of GJ 1214b.
+For example, @Rogers2010a included a gas layer on top of an isothermal interior structure model in order to interpret the structure of the planet GJ 1214b.
 And @Valencia2013 used internal structure models coupled with an atmospheric layer, exploring the dependence of radii on various model parameters including equilibrium temperature and water content.
-Given that we set the surface pressure to between $10^5$ and $10^{10}\,$Pa (1--$100\,000\,$bar), our models must therefore represent the layers interior to an atmosphere of some sort.
+Given that we set the surface pressure to between $10^5$ and $10^{10}\,$Pa (1 and $100\,000\,$bar), our models must therefore represent the layers interior to an atmosphere of some sort.
 
 
 ## Effect of water content
@@ -688,7 +690,7 @@ For a 10$\,$M$_⊕$ super-Earth with a surface pressure of $10^7\,$Pa (100$\,$ba
 This similarity holds across the entire range of planetary masses we considered.
 This suggests that the bulk of the radius change comes from a water layer on the surface whose density depends strongly on the surface temperature.
 
-![Dependence of radii on water mass fraction. Even low-mass water layers result in planets that are strongly affected by temperature changes, especially when water on the surface is hot enough to be in the vapour or supercritical phase. Here we show mass--radius relations for multi-layer planets: an iron core with silicate and (in all but the first panel) water layers. We show the Earth-like iron-silicate core in each panel for comparison. All the watery planets are larger than the dry case due to the lower density of water. Surface temperature variation affects the radius of a watery planet by a similar amount in each case, and it can increase the radius by up to 25 per cent. Because the iron and silicate layers are isothermal, this variation is due solely to temperature effects in the water layer. We fixed the silicate:iron mass ratio at 2:1 and set the surface pressure to $10^7\,$Pa (100$\,$bar). The temperature contours are in steps of 100$\,$K.](autofigs/compositions_big_fig.svg){#fig:composition-variation}
+![Dependence of radii on water mass fraction. Even low-mass water layers result in planets that are strongly affected by temperature changes, especially when water on the surface is hot enough to be in the vapour or supercritical phase. Here we show mass--radius relations for multi-layer planets: an iron core with silicate and (in all but the first panel) water layers. We show the Earth-like iron-silicate core in each panel for comparison. All the watery planets are larger than the dry case owing to the lower density of water. Surface temperature variation affects the radius of a watery planet by a similar amount in each case, and it can increase the radius by up to 25 per cent. Because the iron and silicate layers are isothermal, this variation is due solely to temperature effects in the water layer. We fixed the silicate:iron mass ratio at 2:1 and set the surface pressure to $10^7\,$Pa (100$\,$bar). The temperature contours are in steps of 100$\,$K.](autofigs/compositions_big_fig.svg){#fig:composition-variation}
 
 
 ## Effect of temperature dependence on phase structure {#phase-structure}
@@ -696,35 +698,35 @@ This suggests that the bulk of the radius change comes from a water layer on the
 Our adiabatic assumption provides for water layers which span different phases depending on the pressure--temperature profile.
 As previously noted, we observed a significant bifurcation in the mass--radius diagrams when the surface temperature crossed the condensation curve of water.
 As an example of how the surface temperature affects the structure of a planet at pressures beyond the critical pressure of water, Fig. @fig:pressure-temperature-profiles shows pressure--temperature profiles for adiabatic spheres of water with different surface temperatures.
-At low surface temperatures, the planet contains a significant ice VII component.
-But at high surface temperatures the centre of the planet may consist mostly of the superionic or plasma phases of water, which are shown in Figs. @fig:water-phases and @fig:eos-phase-space.
+The planet contains a significant ice VII component when the surface temperature is low.
+But at high surface temperatures the centre of the planet may consist mostly of the superionic or plasma phases of water, which are shown in Figs @fig:water-phases and @fig:eos-phase-space.
 
-Other studies have explored the layered phase structure of watery planets [e.g. @Zeng2014; @Ehrenreich2006].
+Others have explored the layered phase structure of watery planets [e.g. @Zeng2014; @Ehrenreich2006].
 In particular, @Ehrenreich2006 included an analysis of radiogenic heating in their models to assess the feasibility of having a liquid ocean under a cold ice shell.
 
 ![Model pressure--temperature profiles. Increasing the surface temperature means that more of the planet consists of superionic or plasma phases of water, with the transition to high-pressure ice happening deeper within the interior or not at all. Here we show pressure--temperature profiles for 3$\,$M$_⊕$ spheres of water with a surface pressure of $5×10^7\,$Pa. At a surface temperature of 300$\,$K, the planet consists of liquid water over an ice VII core. But the ice VII phase may not be present within the interior at higher surface temperatures. Instead, the bulk of the planet consists of water in the superionic or plasma state. This, combined with the low-density supercritical fluid at the surface, results in an inflated radius.](autofigs/pressure_temperature_profiles_fig.svg){#fig:pressure-temperature-profiles}
 
 Though we have not assessed how the layered phase structure of a planet's water layer might affect other properties of the planet, the phase of water could be important for its potential to sustain convective energy transport or magnetic fields [@Zeng2014].
-We did include a more complete treatment of the thermal expansion coefficient $α$, calculating it directly from the equation of state, and the variable heat capacity $c_p$.
-This approach may result in a different phase structure from other studies.
+We did include a more complete treatment of the thermal expansion coefficient $α$ (calculating it directly from the equation of state) and the variable heat capacity $c_p$.
+This approach may result in a phase structure that differs from other studies.
 In future we anticipate investigating this more closely to assess whether these internal energy sources are indeed sufficient to drive convection throughout our models: is the assumption of a fully convective interior reasonable?
-As a first indication of this, we consider the fact that we do not find major deviations from the mass--radius relations in @Valencia2007a (Fig. @fig:valencia-mr-comparison) to be promising.
+As a first indication of this, we consider the fact that we do not find major deviations from the mass--radius relations of @Valencia2007a (Fig. @fig:valencia-mr-comparison) to be promising.
 This is despite the fact that they include conductive boundary layers in their models.
 
 > The phase structure is also of interest when we consider questions of habitability.
 The properties of water change significantly near the critical point: water becomes a low-dielectric fluid and a poor solvent for polar substances [@Ansimov2004].
 The nature of reactions supported by water is also expected to change at high temperatures [@Kruse2007].
-We would expect significant changes in any kind of life that could be found within these water layers---first when compared to liquid oceans on Earth, and secondly seen over time as the planet's structure evolved.
+We would expect significant changes in any kind of life that could be found within these water layers, both when compared with liquid oceans on Earth and when seen over time as the planet's structure evolved.
 
 # Conclusion and discussion
 
 In this paper we have presented planetary interior structure models of water-rich super-Earths.
 The models incorporate a temperature-dependent water equation of state and use an adiabatic treatment for the temperature gradient.
 In doing so, we synthesized an updated equation of state for water which attempts to capture all the relevant temperature-dependent behaviour.
-This includes directly calculating the thermal expansion coefficient $α$ from the equation of state, rather than treating it as a constant, and using a variable heat capacity based on experimental data.
+We directly calculated the thermal expansion coefficient $α$ from the equation of state, rather than treating it as a constant, and we used a variable heat capacity based on experimental data.
 Our conclusions are as follows.
 
-First, when modelling a solid planet, adding a water layer comes with a substantial thermal dependence.
+First, when one models a solid planet, adding a water layer comes with a substantial thermal dependence.
 By this we mean that the temperature of the planet may substantially alter the radius of the planet as the water layer expands and contracts.
 Previous studies have shown that including a temperature gradient in Earth-like planets produces a minimal change in its radius [@Howe2014; @Grasset2009; @Seager2007].
 We showed that this assumption no longer holds once large water layers are considered, even setting aside the unrealistic case of a 100 per cent water planet.
@@ -735,53 +737,53 @@ It is also in addition to any uncertainty in the equation of state itself.
 
 The strength of the planet radius-temperature relation also depends on the surface pressure.
 This is a result of the decreasing thermal expansion of water with pressure: the coefficient of thermal expansion is much smaller in high-pressure ice than in the liquid, vapour, or supercritical fluid phases.
-At pressures of more than about $10^{10}\,$Pa ($100\,000\,$bar) the radial temperature dependence becomes irrelevant: the uncertainty in current planetary radius measurements is larger than any conceivable radial change due to temperature effects, so more precise structural models may not be useful.
+At pressures of more than about $10^{10}\,$Pa ($100\,000\,$bar) the radial temperature dependence becomes irrelevant: the uncertainty in current planetary radius measurements is larger than any conceivable radial change owing to temperature effects, so more precise structural models may not be useful.
 However, there is still a significant radial dependence on temperature at lower surface pressures.
 At $10^8\,$Pa (1000$\,$bar), a watery super-Earth with a surface temperature of 1000$\,$K can be up to 0.1$\,$R$_⊕$ larger than one with a surface temperature of 300$\,$K.
-Since atmospheric models often terminate by about 100$\,$bar, it is therefore important to include temperature effects in the interior models if an accurate radius is required as part of the model.
+It is therefore important to include temperature effects in the interior models if an accurate radius is required as part of the model.
 
 This pressure dependence manifests itself most strongly below the critical point of water.
 At pressures below this critical pressure, a phase transition still exists between liquid and vapour.
 There is therefore a bifurcation in the mass--radius diagram: a small increase in surface temperature can causes a large change in radius (up to a factor of two) as the surface water vaporises.
-We cautioned that it is likely not appropriate to attempt to treat such vapour layers using our approach, which is intended for interior structures.
+We caution that it is likely not appropriate to attempt to treat such vapour layers using our approach, which is intended for interior structures.
 However, a lesser version of this effect is still visible at higher pressures.
 
 > We left the surface pressure as a free parameter in our models.
 Any attempt to interpret observations based on these models must necessarily instead treat it as an observational constraint.
 The surface pressure is set by the depth beyond which atmospheric measurements can no longer probe.
-@Madhusudhan2015 discussed planets with H$_2$O-rich atmospheres, describing the use of measurements both in and out of opacity windows to determine the atmospheric thickness.
+@Madhusudhan2015 discussed planets with water-rich atmospheres, describing the use of measurements both in and out of opacity windows to determine the atmospheric thickness.
 The pressure to which these measurements probe varies from 0.1$\,$bar (in regions of high opacity; that is, outside an atmospheric window) to 100$\,$bar (within such a window).
-Our models go beyond this pressure range, and are therefore appropriate for treating the structure of the planet below the observable opacity surface.
+Our models go beyond this pressure range, and are therefore appropriate to treat the structure of the planet below the observable opacity surface.
 
 > In the case of a volatile layer such as water, the line between interior and atmosphere can become blurred.
 The picture is complicated by atmospheric effects that can increase the opacity.
 If a cloud layer forms in the atmosphere, the opacity surface may not necessarily be at the same depth or pressure as any solid surface of the planet.
 Turbidity effects around the critical point may also affect the opacity.
-It is for this reason that high-temperature exoplanets are interesting: at higher temperatures, a cloud deck is less likely to occur and atmospheric measurements will therefore be able to probe deeper.
+It is for this reason that high-temperature exoplanets are interesting: at higher temperatures, a cloud deck is less likely to occur and atmospheric measurements are therefore able to probe deeper.
 The previously-mentioned opacity windows may therefore be able to provide a view through the atmosphere to the planet's surface, or at least to a point where the assumption of interior convective mixing is more likely to hold.
 
 We therefore conclude that, in some cases, planetary heating may alter the interpretation of a planet's radius if a water layer is part of the model.
 This is especially true if the planet consists entirely of water, but this is an unlikely physical scenario.
-More importantly, the result is still significant even if the surface of the water layer is at moderately high pressures---that is, even if it lies underneath a heavy atmosphere.
+More importantly, the result is still significant even if the surface of the water layer is at moderately high pressures and lies underneath a heavy atmosphere.
 All that is required for the water layer's density to change significantly from the isothermal case is for a temperature increase of a few hundred Kelvin.
 Moreover, even isothermal watery planets have some degree of radial temperature dependence: up to 0.3$\,$R$_⊕$ across the mass range of super-Earths and in the temperature range of 300 to 1000$\,$K.
 
 Understanding how the mass--radius relation can be affected by temperature allows us to take the step of detecting and characterising water-rich planets, taking their surface temperatures into account while modelling them.
-This is an important precursor to narrowing the search to planets that would be considered more classically habitable.
-It will be especially useful in the context of the next generation of super-Earths expected to be found orbiting bright stars by missions such as PLATO [@Rauer2014], TESS [@Ricker2014], and CHEOPS [@Broeg2013].
-This approach is promising because it is linked to the characteristic equilibrium temperature of the planet, which can be determined from observations, and so can be included in analyses of populations of planets.
-Through this, we might better understand what proportions of planets include substantial water content.
+This is an important precursor to narrow the search to planets that would be considered more classically habitable.
+It will be especially useful in the context of the next generation of super-Earths expected to be found orbiting bright stars by missions such as PLATO [@Rauer2014], TESS [@Ricker2014] and CHEOPS [@Broeg2013].
+This approach is promising because it is linked to the characteristic equilibrium temperature, which can be determined from observations of the planet, and so can be included in analyses of populations of planets.
+Through this we might better understand what proportion of planets include substantial water content.
 
-> The temperature dependence is also important to take into account in approaches like that of @Kipping2013, where a watery interior model is used to place a lower bound on the atmospheric height of an observed planet.
-We have shown that the radius of a watery planet may be significantly higher than the zero-temperature and isothermal cases.
+> The temperature dependence is also important to take into account in approaches such as that of @Kipping2013, where a watery interior model is used to place a lower bound on the atmospheric height of an observed planet.
+We have shown that the radius of an adiabatic watery planet may be significantly higher than the zero-temperature or isothermal case.
 Incorporating a surface temperature estimate into this approach should therefore give better constraints.
 
 From an observational perspective, these results are most interesting at intermediate pressures.
-At low pressures ($10^5\,$Pa or 1$\,$bar) we cannot claim that we accurately capture the behaviour of what is now essentially an atmosphere, since we include no prescription for radiative energy transport in our models.
+At low pressures ($10^5\,$Pa or 1$\,$bar) we cannot claim that we accurately capture the behaviour of what is now essentially an atmosphere, because we include no prescription for radiative energy transport in our models.
 At high pressures ($10^{10}\,$Pa or $100\,000\,$bar) any temperature dependence in the water equation of state disappears.
-The physical scenario most relevant for these models is therefore that of a water layer (ocean, ice, or supercritical fluid) underneath a thin or moderate atmosphere.
+The physical scenario most relevant for these models is therefore that of a water layer (ocean, ice or supercritical fluid) underneath a thin or moderate atmosphere.
 
-> Other authors such as @Rogers2010a have already included volatile layers on top of interior structure models.
+> Others such as @Rogers2010a have already included volatile layers on top of interior structure models.
 Adding more complete temperature dependence to the interior portion of these planetary models is a worthwhile future direction if we wish to treat them as water-rich.
 
 We look forward to two developments in particular.
@@ -789,10 +791,10 @@ The first is improved atmospheric characterisation and modelling, which will pro
 The question of interior--atmospheric interactions is a rich one that is only starting to be explored.
 Integrating atmospheric and interior models promises progress on questions about surface chemistry, outgassing and other processes that can shape the atmosphere of a planet.
 The second development that will make use of this work is improved spectral resolution of atmospheric observations, and in particular the ability to seek out atmospheric windows [@Madhusudhan2015].
-By observing at wavelengths which pass through the atmosphere, we can in principle directly measure the radius of any solid interior underneath that atmosphere, and thus have a better starting point for interpreting the interior structure.
+By observing at wavelengths which pass through the atmosphere, we can in principle directly measure the radius of any solid interior underneath that atmosphere and thus have a better starting point for interpreting the interior structure.
 
 > # Acknowledgements {-}
 
-> We thank the anonymous reviewer for an insightful review and Chris Tout for helpful discussions and proof-reading.
+> We thank the anonymous reviewer for an insightful review and Christopher Tout for helpful discussions and proof-reading.
 
 ---
