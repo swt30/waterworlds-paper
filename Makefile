@@ -11,7 +11,7 @@ autofigdir=autofigs/
 plotrunner=makeplots.jl
 
 # Outputs
-outputexts=html tex pdf
+outputexts=html tex revision_tex pdf revision_pdf archive
 outputs=$(title).html $(title).pdf $(title).tex $(title)-rev.tex $(title)-rev.pdf
 
 # Styles and templates
