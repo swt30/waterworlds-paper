@@ -1,8 +1,8 @@
-# Reviewer's Comments
+# Response to reviewer's comments
 
-Changes to the paper are shown highlighted.
+Changes to the paper are shown in red text.
 
-## Major Comments
+## Major comments
 
 > What is the estimated error (uncertainty) on the density of the new EOS that the authors present in this paper? Is it on ~1% level? or ~0.1% level? Many readers would be interested to know this. The authors should mention this in this paper.
 
@@ -38,7 +38,7 @@ We also now mention how our models serve as a useful addition to the work of Kip
 
 Here the reviewer has raised some excellent points and anticipated the direction in which we are continuing. Although we do not intend to treat opacity within this paper, it is a good next step. We would like to investigate to what degree such a planet is convective and therefore make a clearer distinction between atmosphere and interior. This will require at least a simple radiative treatment to assess at what depth the planet becomes unstable against convection. Howe et al (2014) have a paper on core-envelope decompositions for icy/watery planets, but their models do not treat the temperature profile and associated phase changes throughout the planet.
 
-We have updated the paper to strengthen the discussion on the volatile nature of H$_2$O, addressing it in the context of the surface pressure changes discussed above (§4, pp. 14--15). In particular, we have noted the reviewer's concerns about the presence of clouds and turbidity. We included comments about how observations of hot exoplanets can partially circumvent the problem of clouds.
+We have updated the paper to strengthen the discussion on the volatile nature of water, addressing it in the context of the surface pressure changes discussed above (§4, pp. 14--15). In particular, we have noted the reviewer's concerns about the presence of clouds and turbidity. We included comments about how observations of hot exoplanets can partially circumvent the problem of clouds.
 
 > The authors may want to mention and compare the physical implications of the existence of different phases of water in their models. (See Anisimov and Sengers, Near-critical behavior of aqueous systems, 2004). For example, the properties of water near supercritical point are very different from ambient liquid water. Due to destruction of Hydrogen-bonds at higher temperatures, the water near the supercritical point becomes a poor solvent for electrolytes, however, a good solvent for non-polar molecules. Its electric property also changes from a high dielectric to low dielectric. The strong density fluctuations around the critical point also causes opalescent turbidity. Those change of properties will affect the habitability and the type of habitability of the particular planet of interest. There are also abrupt changes of properties of cold liquid water above 0.2 GPa (for example, viscosity, self-diffusion, compressibility, etc.) (See Kruse and Dinjus, Hot compressed water as reaction medium and reactant, 2007). Therefore, with the proposed new H2O EOS, the authors may want to discuss the implications of each scenario on the habitability of the planet.
 
@@ -52,11 +52,14 @@ This is a very interesting line of enquiry, although a little beyond the scope o
 > - Rogers 2014 (the online link is missing)
 > - Zeng & Sasselov 2014 (the online link is missing)
 
-TODO: We have checked and updated the references as requested.
+We have checked and updated the references as requested, inserting links to journals, removing unnecessary URLs, and changing arXiv references to a journal reference if the paper has since been published.
 
-## Figure alterations
+## Other alterations
 
-1. The text incorrectly indicated that figure 8 showed models that were 100% water.
-    They are actually 30% water over an Earth-like core, and we have updated the text appropriately.
-2. Figure 8 now cover a surface pressure range of 1--1000 bar instead of 10-10000 bar.
-3. The centre-bottom panel in figure 9 now shows 30% water models rather than 20% in order to match the models used in figure 8.
+We have also made the following changes to the paper following an internal review. These alterations either pertain to the figures or are minor textual changes that do not alter the content or meaning of the paper. They are not highlighted in the updated copy.
+
+- The text incorrectly indicated that figure 8 showed models that were 100% water. They are actually 30% water over an Earth-like core, and we have updated the text appropriately.
+- Figure 1 misidentified the ice VII phase in the water phase diagram and has been corrected.
+- Figure 8 now covers a surface pressure range of 1--1000 bar instead of 10--10000 bar.
+- The centre-bottom panel in figure 9 now shows 30% water models rather than 20%. This now matches the models used in figure 8.
+- We made grammatical changes to improve readability and conform to the MNRAS style. For example, % signs now read "per cent" and references to figures and tables now read "Fig." and "Table" instead of "figure" and "table".
