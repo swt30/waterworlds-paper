@@ -24,8 +24,8 @@ abstract: |
     We developed temperature-dependent models of water-rich super-Earths that include a comprehensive temperature-dependent water equation of state.
     We found that thermal effects induce significant changes in the radii of water-rich super-Earths.
     For example, for super-Earths with 10 per cent water by mass, the radius increases by up to 0.5$\,$R$_⊕$ when the surface temperature is increased from 300 to 1000$\,$K, assuming a surface pressure of 100$\,$bar and an adiabatic temperature gradient in the water layer.
-    The effect is even larger for lower surface pressures or higher surface temperatures, and changing the water fraction makes only a marginal difference.
-    These effects are significant considering that radii of several super-Earths have been measured at precisions better than 0.1$\,$R$_⊕$.
+    The increase is even larger at lower surface pressures or higher surface temperatures, and changing the water fraction makes only a marginal difference.
+    These effects are comparable to current super-Earth radial measurement errors, which can be better than 0.1$\,$R$_⊕$.
     It is therefore important to ensure that thermal effects of water are taken into account when interpreting super-Earth radii using internal structure models.
 
 
@@ -615,30 +615,32 @@ We explored the dependence of super-Earth radii on three key model parameters.
 ## Effect of surface temperature on isothermal and adiabatic interiors
 
 We found that thermal expansion can lead to significant changes in the radii of water-rich super-Earths.
-We constructed spheres of water in two different ways: first we modelled them as homogeneous isothermal spheres, then we instead allowed the temperature to increase adiabatically into the planet.
+We constructed super-Earths in two different ways.
+First we modelled them as isothermal spheres containing an Earth-like core (33 per cent Fe and 67 per cent MgSiO$_3$) underneath a water layer of 30 per cent of the planet's mass.
+Then we instead allowed the temperature to increase adiabatically into the water layer.
 Fig. @fig:isothermal-vs-adiabatic shows that the assumption that thermal expansion effects are negligible, which was made in some previous studies, is not the case.
 This is true in two senses.
 First, a significant temperature dependence exists when we adopt an adiabatic interior temperature profile compared with an isothermal one.
 The surface temperature also affects the radius of a planet within both types of models.
 
-![Dependence of radii on surface temperature and internal temperature profile. An increased surface temperature results in an increased planetary radius. This effect is especially pronounced in the full adiabatic temperature treatment. Here we show homogeneous spheres of water constructed in two different ways: an isothermal treatment where the temperature is constant throughout the planet and an adiabatic treatment where we fixed the surface temperature but allowed the temperature to increase inwards according to the adiabatic relation (equation @eq:temp-gradient). The adiabatic models are warmer and therefore significantly larger overall, but even the isothermal planets display some radius change due to temperature. The effects of this temperature dependence are comparable to current uncertainties on measured masses and radii for some of the best-characterised exoplanets[^exoplanetsorg]. The surface pressure in these models is $10^7\,$Pa (100$\,$bar), and the temperature increases in steps of 100$\,$K. The large gap between 500 and 600$\,$K in the adiabatic case is due to a density discontinuity between the liquid and vapour phases.](autofigs/isothermsadiabats_fig.svg){#fig:isothermal-vs-adiabatic}
+![Dependence of watery super-Earth radii on surface temperature and internal temperature profile. An increased surface temperature results in an increased planetary radius. This effect is especially pronounced in the full adiabatic temperature treatment. Here we show super-Earths with an Earth-like core under a 30 per cent water layer by mass. We treated the temperature in two different ways: an isothermal treatment with a fixed constant temperature and an adiabatic treatment where we fixed the surface temperature but allowed the temperature to increase inwards according to the adiabatic relation (equation @eq:temp-gradient). The adiabatic models are warmer and therefore significantly larger overall, but even the isothermal planets display some radius change due to temperature. The effects of this temperature dependence are comparable to current uncertainties on measured masses and radii for some of the best-characterised exoplanets[^exoplanetsorg]. The surface pressure in these models is $10^7\,$Pa (100$\,$bar), and the temperature increases in steps of 100$\,$K. The large gap between 500 and 600$\,$K in the adiabatic case is due to a density discontinuity between the liquid and vapour phases.](autofigs/isothermsadiabats_fig.svg){#fig:isothermal-vs-adiabatic}
 
 [^exoplanetsorg]: These data are from [exoplanets.org](http://www.exoplanets.org). We selected planets with known radii and masses of 1 to 10$\,$M$_⊕$. We then plotted the twelve planets with the lowest summed relative uncertainty in mass and radius $\left( ΔR/R + ΔM/M \right)$.
 
 The adiabatic models have a larger radius for a given mass when compared with the isothermal case.
 This is to be expected: the average temperature is higher along an adiabat than an isotherm fixed at the surface temperature, and the density of water generally decreases with temperature.
-The increase in radius is significant at higher surface temperatures, as shown in Fig. @fig:isothermal-vs-adiabatic. For example, a 4$\,$M$_⊕$ water planet with a 600$\,$K surface has a radius of 2.1$\,$R$_⊕$ if its interior is isothermal, but 2.4$\,$R$_⊕$ if it is adiabatic.
-Across the super-Earth mass range we considered, the adiabatic radii increased by up to 0.4$\,$R$_⊕$ when compared with the isothermal case.
+The increase in radius is significant at higher surface temperatures, as shown in Fig. @fig:isothermal-vs-adiabatic. For example, a 4$\,$M$_⊕$ 30 per cent water planet with a 600$\,$K surface has a radius of 1.8$\,$R$_⊕$ if its water layer is isothermal, but 2$\,$R$_⊕$ if it is adiabatic.
+Across the super-Earth mass range we considered, the adiabatic radii increased by up to 0.3$\,$R$_⊕$ when compared with the isothermal case.
 The difference becomes particularly pronounced at higher surface temperatures, at which point the water layer may consist of supercritical fluid rather than liquid, solid, or vapour (Fig. @fig:water-phases).
 
 A significant dependence on surface temperature also exists when using the adiabatic models.
 That is, changing the surface temperature affects the radius of a model water super-Earth even when its temperature profile is already being treated as adiabatic.
 In the case of a 10$\,$M$_⊕$ planet, increasing the surface temperature from 300 to 1000$\,$K gave a radius increase of 0.6$\,$R$_⊕$.
-For an Earth-mass planet the increase was approximately 0.4$\,$R$_⊕$ for the same temperature range.
+For an Earth-mass planet the increase was approximately 0.3$\,$R$_⊕$ for the same temperature range.
 
 We have highlighted above the change in the adiabatic models, which we claim are a more realistic representation of the actual temperature structure within the planet.
 But even the isothermal models show a significant increase in radius with the planet's temperature.
-For a 10$\,$M$_⊕$ planet, the change in radius is 0.2$\,$R$_⊕$ from 300 to 1000$\,$K.
+For a 10$\,$M$_⊕$ planet, the change in radius is 0.3$\,$R$_⊕$ from 300 to 1000$\,$K.
 This is due to the thermal expansion of the planet as a whole, rather than of one small part of the water layer near the surface.
 We do not necessarily expect an adiabatic temperature gradient throughout the whole planet because the entire interior may not all be convective.
 For example, @Valencia2007a included conductive boundary layers in their models.
