@@ -26,7 +26,7 @@ abstract: |
     For example, for super-Earths with 10 per cent water by mass, the radius increases by up to 0.5$\,$R$_⊕$ when the surface temperature is increased from 300 to 1000$\,$K, assuming a surface pressure of 100$\,$bar and an adiabatic temperature gradient in the water layer.
     The increase is even larger at lower surface pressures or higher surface temperatures, and changing the water fraction makes only a marginal difference.
     These effects are comparable to current super-Earth radial measurement errors, which can be better than 0.1$\,$R$_⊕$.
-    It is therefore important to ensure that thermal effects of water are taken into account when interpreting super-Earth radii using internal structure models.
+    It is therefore important to ensure that the thermal behaviour of water is taken into account when interpreting super-Earth radii using internal structure models.
 
 
 # Reference metadata
