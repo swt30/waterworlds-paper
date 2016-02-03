@@ -56,10 +56,10 @@ We have checked and updated the references as requested, inserting links to jour
 
 ## Other alterations
 
-We have also made the following changes to the paper following an internal review. These alterations either pertain to the figures or are minor textual changes that do not alter the content or meaning of the paper. They are not highlighted in the updated copy.
+We have also made the following changes to the paper following an internal review. These alterations either pertain to the figures or are minor textual changes that do not alter the meaning of the paper. They are not highlighted in the updated copy.
 
 - The text incorrectly indicated that figure 8 showed models that were 100% water. They are actually 30% water over an Earth-like core, and we have updated the text appropriately.
+- Figure 7 and the centre-bottom panel in figure 9 now show 30% water models rather than 100% and 20% respectively. This now matches the models used in figure 8. We updated the caption of figure 7 and the text to reflect this.
 - Figure 1 misidentified the ice VII phase in the water phase diagram and has been corrected.
 - Figure 8 now covers a surface pressure range of 1--1000 bar instead of 10--10000 bar.
-- The centre-bottom panel in figure 9 now shows 30% water models rather than 20%. This now matches the models used in figure 8.
 - We made grammatical changes to improve readability and conform to the MNRAS style. For example, % signs now read "per cent" and references to figures and tables now read "Fig." and "Table" instead of "figure" and "table".
