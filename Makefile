@@ -26,7 +26,7 @@ selfcontainedcss=-H $(styledir)/css/style-open.html -H $(css) -H $(styledir)/css
 clutter=*.run.xml *.aux *.bcf *.fdb_latexmk *.fls *.log *.out *.bbl *.blg *Notes.bib .figsentinel
 
 # pandoc options
-commonopts=--filter=pandoc-fignos --filter=pandoc-eqnos --filter=pandoc-tablenos --from=markdown -s -S
+commonopts=--filter=pandoc-critic.py --filter=pandoc-fignos --filter=pandoc-eqnos --filter=pandoc-tablenos --from=markdown -s -S
 basetexopts=$(commonopts) --natbib --filter=pandoc-svg.py
 texopts=$(basetexopts) --template $(textemplate)
 revtexopts=$(basetexopts) --template $(revtextemplate)
