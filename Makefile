@@ -56,10 +56,10 @@ $(title)-html.tar.gz: html figures
 	tar -czf $(title)-html.tar.gz $(title).html autofigs/*.png
 
 $(title).pdf: $(title).tex figures
-	latexmk $(title).tex -pdf -e '$$pdflatex=q/xelatex %O %S/'
+	latexmk $(title).tex -pdf
 
 $(title)-rev.pdf: $(title)-rev.tex figures
-	latexmk $(title)-rev.tex -pdf -e '$$pdflatex=q/xelatex %O %S/'
+	latexmk $(title)-rev.tex -pdf
 
 $(title)-rev.tex: $(title).md $(revtextemplate) | figures bibtex
 	pandoc $(title).md $(revtexopts) -o $(title)-rev.tex
