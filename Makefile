@@ -11,7 +11,7 @@ autofigdir=autofigs/
 plotrunner=makeplots.jl
 
 # Outputs
-outputexts=html tex revision_tex pdf revision_pdf htmlarchive texarchive
+outputexts=html tex revision_tex pdf revision_pdf htmlarchive arxivarchive texarchive
 outputs=$(title).html $(title).pdf $(title).tex $(title)-rev.tex $(title)-rev.pdf
 
 # Styles and templates
@@ -47,10 +47,14 @@ tex: $(title).tex
 revision_tex: $(title)-rev.tex
 html: $(title).html
 texarchive: $(title)-source.tar.gz
+arxivarchive: $(title)-arxiv.tar.gz
 htmlarchive: $(title)-html.tar.gz
 
 $(title)-source.tar.gz: $(title).md pdf revision_pdf tex figures
 	tar -czf $(title)-source.tar.gz $(title).md $(title).pdf $(title)-rev.pdf $(title).tex library.bib $(title).bbl README.md autofigs/*.pdf
+
+$(title)-arxiv.tar.gz: $(title).md pdf tex figures
+	tar -czhf $(title)-arxiv.tar.gz $(title).md $(title).tex mnras.cls README-arXiv.md $(title).bbl autofigs/*.pdf
 
 $(title)-html.tar.gz: html figures
 	tar -czf $(title)-html.tar.gz $(title).html autofigs/*.png
