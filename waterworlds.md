@@ -76,7 +76,7 @@ Models from first principles (numerical or analytical models based on the physic
 
 Planetary interior models are a worthwhile starting point to make sense of the limited observational data we have.
 These models are inspired by earlier successes with stellar structure models, which are key to interpreting observations of stars.
-Others had previously considered the internal structures of planets in our solar system [for example, @Hubbard1980], but the study often taken as the base for planetary interior modelling is by @Zapolsky1969 who constructed mass--radius relations for large homogeneous isothermal spheres. {==A number of internal structure models have been developed for exoplanets, starting with early works a decade ago [e.g. @Valencia2006; @Fortney2007; @Sotin2007; @Seager2007].==} The ever-increasing number of known exoplanets, many of which have both mass and radius measurements, are a diverse and interesting set of objects to which to apply these models.
+Others had previously considered the internal structures of planets in our solar system [for example, @Hubbard1980], but the study often taken as the base for planetary interior modelling is by @Zapolsky1969 who constructed mass--radius relations for large homogeneous isothermal spheres. A number of internal structure models have been developed for exoplanets, starting with early works a decade ago [e.g. @Valencia2006; @Fortney2007; @Sotin2007; @Seager2007]. The ever-increasing number of known exoplanets, many of which have both mass and radius measurements, are a diverse and interesting set of objects to which to apply these models.
 
 The first way in which planetary interior models can be useful is to make broad inferences about the structure of a planet.
 There is some information available about any planet despite an inherent degeneracy between different compositions.
@@ -143,7 +143,7 @@ Others have previously investigated the structures of planets containing a signi
 For example, @Ehrenreich2006 studied the internal structure of the exoplanet OGLE 2005-BLG-390Lb, modelling the phase changes throughout.
 @Zeng2014 chose to explore evolutionary effects, following the phase transitions within model water-rich planets.
 They comment that "[phase] transformations may have a significant effect on the interior convective pattern and also the magnetic field of such a planet, but they may only affect the overall radius slightly."
-Our present study addresses the question of exactly how much temperature variations affect the structure and radius of water-rich planets, {==and whether such effects are observable.==}
+Our present study addresses the question of exactly how much temperature variations affect the structure and radius of water-rich planets and whether such effects are observable.
 
 
 # Method
@@ -166,7 +166,7 @@ We discuss our approach to the temperature structure: we treated the temperature
 We explain how we used these models to construct temperature-dependent mass--radius relations for both homogeneous and layered planets.
 Next we present the equation of state for water that we used.
 It is comprehensive over the pressure and temperature range relevant to super-Earth interiors.
-We highlight the difficulty of dealing with disparate sources of experimental and theoretical data in different phases, {==as well as sources of uncertainty within the equation of state.==}
+We highlight the difficulty of dealing with disparate sources of experimental and theoretical data in different phases, as well as sources of uncertainty within the equation of state.
 Finally, we present comparisons with previous works to verify that our structural modelling code works appropriately.
 
 
@@ -526,14 +526,14 @@ Pre-computing and tabulating the data in this way saved significant time.
 In our trials, the resolution of the grid barely altered the properties of the planetary models.
 This suggests that the density behaviour within a single phase region was more important than any effects across phase boundaries that might be lost by sampling from this discrete grid.
 
-{==The equation of state we used necessarily has some uncertainty in it, especially in regions near the critical point of water [@Wagner2002] and at high temperatures and pressures where there are sometimes conflicting experimental and theoretical data [@Baraffe2008].
+The equation of state we used necessarily has some uncertainty in it, especially in regions near the critical point of water [@Wagner2002] and at high temperatures and pressures where there are sometimes conflicting experimental and theoretical data [@Baraffe2008].
 The error in the equation of state varies depending on the original data source.
 For the region encompassed by the IAPWS data [@Wagner2002], the density uncertainty is approximately 0.01 per cent (liquid and solid), 0.03 to 0.1 per cent (vapour), and up to 0.5 per cent in the region around and beyond the critical point.
 They give a more detailed breakdown of these errors in their section 6.3.2, in particular fig. 6.1.
 We estimate that the error beyond these regions is closer to 1 per cent if we extrapolate beyond the table and assume that the uncertainty continues to increase at higher temperatures and pressures.
 For the supercritical fluid, plasma and superionic phases in the data of @French2009, they state that "the QMD EOS is accurate up to 1 per cent for the conditions relevant for the giant planet’s interiors of our solar system."
 For the ice VII phase, the measurements of @Sugimura2010 have errors of between 0.003 per cent and 0.5 per cent.
-Finally, it is not possible to give a meaningful uncertainty estimate at higher pressures where no measurements exist, but we do not treat the temperature dependence there anyway.==}
+Finally, it is not possible to give a meaningful uncertainty estimate at higher pressures where no measurements exist, but we do not treat the temperature dependence there anyway.
 
 ### Thermal expansion and heat capacity
 
@@ -589,7 +589,7 @@ In general, however, our results agree well with theirs.
 We also compared our results with the evolutionary models of @Lopez2012.
 Although we were able to reproduce their mass--radius relation for Earth-like planets, we were less successful when adding extended water layers (Fig. @fig:lopez-mr-comparison).
 We can match the radius of an arbitrary planet by choosing an appropriate surface pressure but we underpredict the radii of small planets and overpredict the radii of large planets compared with their results.
-This may be a result of different equation of state choices {==or different temperature gradients during the course of their evolutionary calculations.==}
+This may be a result of different equation of state choices or different temperature gradients during the course of their evolutionary calculations.
 
 ![Comparison with evolutionary models. We plot dry (Earth-like) and wet (50 per cent water on an Earth-ratio core/mantle) mass--radius relations. Shown for comparison are models by @Lopez2012, who build on work by @Fortney2007 and @Nettelmann2011 by using a thermal evolution approach to track the entropy within each planet as it cools. Surface temperature significantly alters the mass--radius relation in our models. The surface temperature in these models is 700$\,$K but the shaded band shows models with surface temperatures from 500 to 900$\,$K, a significant spread, which is caused by temperature-dependent density changes of water at lower pressures. We chose a surface pressure of $10^7\,$Pa to approximately match the radii of @Lopez2012. Their method does not begin from an explicit surface pressure, as ours does.](autofigs/lopez_comparisons_fig.svg){#fig:lopez-mr-comparison}
 
@@ -714,10 +714,10 @@ In future we anticipate investigating this more closely to assess whether these 
 As a first indication of this, we consider the fact that we do not find major deviations from the mass--radius relations of @Valencia2007a (Fig. @fig:valencia-mr-comparison) to be promising.
 This is despite the fact that they include conductive boundary layers in their models.
 
-{==The phase structure is also of interest when we consider questions of habitability.
+The phase structure is also of interest when we consider questions of habitability.
 The properties of water change significantly near the critical point: water becomes a low-dielectric fluid and a poor solvent for polar substances [@Ansimov2004].
 The nature of reactions supported by water is also expected to change at high temperatures [@Kruse2007].
-We would expect significant changes in any kind of life that could be found within these water layers, both when compared with liquid oceans on Earth and when seen over time as the planet's structure evolved.==}
+We would expect significant changes in any kind of life that could be found within these water layers, both when compared with liquid oceans on Earth and when seen over time as the planet's structure evolved.
 
 # Conclusion and discussion
 
@@ -735,7 +735,7 @@ For example, consider the case of a 4$\,$M$_⊕$ planet with an Earth-like core 
 If the surface pressure is $10^7\,$Pa (100$\,$bar), the difference in the planet's radius when the surface is heated from 300$\,$K to 1000$\,$K is approximately 0.3$\,$R$_⊕$ (Fig. @fig:composition-variation).
 This effect is on top of any thermal expansion of iron and silicate: our models treated the rocky layers as isothermal.
 It is also in addition to any uncertainty in the equation of state itself.
-{==Such changes in radii are significant considering that current observations can already measure super-Earth radii to precisions better than 0.1$\,$R$_⊕$ (e.g. Fig. @fig:isothermal-vs-adiabatic).==}
+Such changes in radii are significant considering that current observations can already measure super-Earth radii to precisions better than 0.1$\,$R$_⊕$ (e.g. Fig. @fig:isothermal-vs-adiabatic).
 
 The strength of the planet radius-temperature relation also depends on the surface pressure.
 This is a result of the decreasing thermal expansion of water with pressure: the coefficient of thermal expansion is much smaller in high-pressure ice than in the liquid, vapour, or supercritical fluid phases.
@@ -750,19 +750,19 @@ There is therefore a bifurcation in the mass--radius diagram: a small increase i
 We caution that it is likely not appropriate to attempt to treat such vapour layers using our approach, which is intended for interior structures.
 However, a lesser version of this effect is still visible at higher pressures.
 
-{==We consider the surface pressure as a free parameter in our models.
+We consider the surface pressure as a free parameter in our models.
 In principle, the surface pressure could be constrained through spectroscopic observations of the planetary atmosphere, though such observations are currently difficult for super-Earths.
 The surface pressure is set by the depth beyond which atmospheric measurements can no longer probe.
 @Madhusudhan2015 discussed planets with water-rich atmospheres, describing the use of measurements both in and out of opacity windows to determine the atmospheric thickness.
 The pressure to which these measurements probe varies from 0.1$\,$bar (in regions of high opacity; that is, outside an atmospheric window) to 100$\,$bar (within such a window).
-Our models go beyond this pressure range, and are therefore appropriate to treat the structure of the planet below the observable opacity surface.==}
+Our models go beyond this pressure range, and are therefore appropriate to treat the structure of the planet below the observable opacity surface.
 
-{==In the case of a volatile layer such as water, the line between interior and atmosphere can become blurred.
+In the case of a volatile layer such as water, the line between interior and atmosphere can become blurred.
 The picture is complicated by atmospheric effects that can increase the opacity.
 If a cloud layer forms in the atmosphere, the opacity surface may not necessarily be at the same depth or pressure as any solid surface of the planet.
 Turbidity effects around the critical point may also affect the opacity.
 It is for this reason that high-temperature exoplanets are interesting: at higher temperatures, a cloud deck is less likely to occur and atmospheric measurements are therefore able to probe deeper.
-The previously-mentioned opacity windows may therefore be able to provide a view through the atmosphere to the planet's surface, or at least to a point where the assumption of interior convective mixing is more likely to hold.==}
+The previously-mentioned opacity windows may therefore be able to provide a view through the atmosphere to the planet's surface, or at least to a point where the assumption of interior convective mixing is more likely to hold.
 
 We therefore conclude that, in some cases, planetary heating may alter the interpretation of a planet's radius if a water layer is part of the model.
 This is especially true if the planet consists entirely of water, but this is an unlikely physical scenario.
@@ -776,16 +776,16 @@ It will be especially useful in the context of the next generation of super-Eart
 This approach is promising because it is linked to the characteristic equilibrium temperature, which can be determined from observations of the planet, and so can be included in analyses of populations of planets.
 Through this we might better understand what proportion of planets include substantial water content.
 
-{==The temperature dependence is also important to take into account in approaches such as that of @Kipping2013, where a watery interior model is used to place a lower bound on the atmospheric height of an observed planet.
+The temperature dependence is also important to take into account in approaches such as that of @Kipping2013, where a watery interior model is used to place a lower bound on the atmospheric height of an observed planet.
 We have shown that the radius of an adiabatic watery planet may be significantly higher than the zero-temperature or isothermal case.
-Incorporating a surface temperature estimate into this approach should therefore give better constraints.==}
+Incorporating a surface temperature estimate into this approach should therefore give better constraints.
 
 From an observational perspective, these results are most interesting at intermediate pressures.
 At low pressures ($10^5\,$Pa or 1$\,$bar) we cannot claim that we accurately capture the behaviour of what is now essentially an atmosphere, because we include no prescription for radiative energy transport in our models.
 At high pressures ($10^{10}\,$Pa or $100\,000\,$bar) any temperature dependence in the water equation of state disappears.
 The physical scenario most relevant for these models is therefore that of a water layer (ocean, ice or supercritical fluid) underneath a thin or moderate atmosphere.
-{==Others such as @Rogers2010a have already included volatile layers on top of interior structure models.
-Adding more complete temperature dependence to the interior portion of these planetary models is a worthwhile future direction if we wish to treat them as water-rich.==}
+Others such as @Rogers2010a have already included volatile layers on top of interior structure models.
+Adding more complete temperature dependence to the interior portion of these planetary models is a worthwhile future direction if we wish to treat them as water-rich.
 
 We look forward to two developments in particular.
 The first is improved atmospheric characterisation and modelling, which will provide useful pressure and temperature boundary conditions at the base of the atmosphere.
@@ -794,8 +794,8 @@ Integrating atmospheric and interior models promises progress on questions about
 The second development that will make use of this work is improved spectral resolution of atmospheric observations, and in particular the ability to seek out atmospheric windows [@Madhusudhan2015].
 By observing at wavelengths which pass through the atmosphere, we can in principle directly measure the radius of any solid interior underneath that atmosphere and thus have a better starting point for interpreting the interior structure.
 
-# {==Acknowledgements==} {-}
+# Acknowledgements {-}
 
-{==We thank the anonymous reviewer for an insightful review and Christopher Tout for helpful discussions and comments. ST gratefully acknowledges support from the Royal Society of New Zealand.==}
+We thank the anonymous reviewer for an insightful review and Christopher Tout for helpful discussions and comments. ST gratefully acknowledges support from the Royal Society of New Zealand.
 
 ---
