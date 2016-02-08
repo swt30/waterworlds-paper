@@ -19,7 +19,7 @@ styledir=/home/scott/Documents/Styles
 textemplate=$(styledir)/pandoc/paper-mnras.tex
 revtextemplate=$(styledir)/pandoc/paper-mnras-revisions.tex
 htmltemplate=$(styledir)/pandoc/paper.html
-css=$(styledir)/css/markdown3.css
+css=$(styledir)/css/paper.css
 selfcontainedcss=-H $(styledir)/css/style-open.html -H $(css) -H $(styledir)/css/style-close.html
 
 # for cleaning purposes
