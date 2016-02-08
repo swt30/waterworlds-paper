@@ -11,8 +11,8 @@ autofigdir=autofigs/
 plotrunner=makeplots.jl
 
 # Outputs
-outputexts=html tex revision_tex pdf revision_pdf htmlarchive arxivarchive texarchive
-outputs=$(title).html $(title).pdf $(title).tex $(title)-rev.tex $(title)-rev.pdf
+outputexts=tex tex_revision pdf pdf_revision html html_arxiv tex_archive arxiv_archive html_archive
+outputs=$(title).tex $(title)-rev.tex $(title).pdf $(title)-rev.pdf $(title).html $(title)-arxiv.html $(title)-source.tar.gz $(title)-arxiv.tar.gz $(title)-html.tar.gz
 
 # Styles and templates
 styledir=/home/scott/Documents/Styles
@@ -34,51 +34,47 @@ htmlopts=$(commonopts) --template $(htmltemplate) $(selfcontainedcss) --css $(cs
 
 # make all the things!
 all: $(outputexts)
-figfolders: $(figdir) $(autofigdir)
-bibtex:
-	rm -f $(bibfile)
-	cp ~/Documents/PhD/Literature/bibtex/publications-waterworlds.bib library.bib
 
 # documents
-
-pdf: $(title).pdf
-revision_pdf: $(title)-rev.pdf
 tex: $(title).tex
-revision_tex: $(title)-rev.tex
-html: $(title).html
-texarchive: $(title)-source.tar.gz
-arxivarchive: $(title)-arxiv.tar.gz
-htmlarchive: $(title)-html.tar.gz
-
-$(title)-source.tar.gz: $(title).md pdf revision_pdf tex figures
-	tar -czf $(title)-source.tar.gz $(title).md $(title).pdf $(title)-rev.pdf $(title).tex library.bib $(title).bbl README.md autofigs/*.pdf
-
-$(title)-arxiv.tar.gz: $(title).md pdf tex figures
-	tar -czhf $(title)-arxiv.tar.gz $(title).md $(title).tex mnras.cls README-arXiv.md $(title).bbl autofigs/*.pdf
-
-$(title)-html.tar.gz: html figures
-	tar -czf $(title)-html.tar.gz $(title).html autofigs/*.png
-
-$(title).pdf: $(title).tex figures
-	latexmk $(title).tex -pdf
-
-$(title)-rev.pdf: $(title)-rev.tex figures
-	latexmk $(title)-rev.tex -pdf
-
-$(title)-rev.tex: $(title).md $(revtextemplate) | figures bibtex
-	pandoc $(title).md $(revtexopts) -o $(title)-rev.tex
-
 $(title).tex: $(title).md $(textemplate) | figures bibtex
 	pandoc $(title).md $(texopts) -o $(title).tex
 
+tex_revision: $(title)-rev.tex
+$(title)-rev.tex: $(title).md $(revtextemplate) | figures bibtex
+	pandoc $(title).md $(revtexopts) -o $(title)-rev.tex
+
+pdf: $(title).pdf
+$(title).pdf: $(title).tex figures
+	latexmk $(title).tex -pdf
+
+pdf_revision: $(title)-rev.pdf
+$(title)-rev.pdf: $(title)-rev.tex figures
+	latexmk $(title)-rev.tex -pdf
+
+html: $(title).html
 $(title).html: $(title).md $(css) $(htmltemplate) | figures
 	pandoc $(title).md $(htmlopts) -o $(title).html
 
+html_arxiv: $(title)-arxiv.html
+$(title)-arxiv.html: $(title).md $(css) $(htmltemplate) | figures
+	pandoc $(title).md --filter=pandoc-svg.py $(htmlopts) -o $(title)-arxiv.html
+
+tex_archive: $(title)-source.tar.gz
+$(title)-source.tar.gz: $(title).md pdf pdf_revision tex figures
+	tar -czf $(title)-source.tar.gz $(title).md $(title).pdf $(title)-rev.pdf $(title).tex library.bib $(title).bbl README.md autofigs/*.pdf
+
+arxiv_archive: $(title)-arxiv.tar.gz
+$(title)-arxiv.tar.gz: $(title).md tex figures
+	tar -czhf $(title)-arxiv.tar.gz $(title).md $(title).tex mnras.cls README-arXiv.md $(title).bbl autofigs/*.pdf
+
+html_archive: $(title)-html.tar.gz
+$(title)-html.tar.gz: html_arxiv figures
+	tar -czf $(title)-html.tar.gz $(title)-arxiv.html autofigs/*.png
 
 # figures
-
 figures: .figsentinel | $(figdir) $(autofigdir)
-
+figfolders: $(figdir) $(autofigdir)
 forcefigures: | figures
 	julia $(plotrunner)
 
@@ -92,9 +88,12 @@ $(figdir):
 $(autofigdir):
 	mkdir -p $(autofigdir)
 
+# auxiliary
+bibtex:
+	rm -f $(bibfile)
+	cp ~/Documents/PhD/Literature/bibtex/publications-waterworlds.bib library.bib
 
 # cleaning
-
 clean:
 	latexmk -C -f $(title).tex
 	rm -rf $(outputs) $(clutter) $(autofigdir)/*
