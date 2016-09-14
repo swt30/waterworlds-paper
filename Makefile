@@ -98,4 +98,4 @@ clean:
 	latexmk -C -f $(title).tex
 	rm -rf $(outputs) $(clutter) $(autofigdir)/*
 
-.PHONY: all clean rsync_upload rsync_clean figures forcefigures
+.PHONY: all clean figures forcefigures
