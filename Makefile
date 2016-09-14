@@ -15,7 +15,7 @@ outputexts=tex tex_revision pdf pdf_revision html html_arxiv tex_archive arxiv_a
 outputs=$(title).tex $(title)-rev.tex $(title).pdf $(title)-rev.pdf $(title).html $(title)-arxiv.html $(title)-source.tar.gz $(title)-arxiv.tar.gz $(title)-html.tar.gz
 
 # Styles and templates
-styledir=/home/scott/Documents/Styles
+styledir=~/Documents/Styles
 textemplate=$(styledir)/pandoc/paper-mnras.tex
 revtextemplate=$(styledir)/pandoc/paper-mnras-revisions.tex
 htmltemplate=$(styledir)/pandoc/paper.html
